@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import Main from "./components/Main";
 
 function App() {
-  return (
-    <div className='flex min-h-screen justify-center items-center'>
-      <h1 className='text-5xl'>Welcome to Smart Home Starter Template</h1>
-    </div>
-  )
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
+    },
+  ]);
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
-export default App
+export default App;
