@@ -1,6 +1,6 @@
 import React from "react";
 
-const CartItem = ({ product }) => {
+const CartItem = ({ product, handleRemoveItem }) => {
   const { id, name, price, quantity, picture } = product;
   return (
     <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
@@ -27,6 +27,7 @@ const CartItem = ({ product }) => {
           </div>
           <div className="flex text-sm divide-x">
             <button
+              onClick={() => handleRemoveItem(id)}
               type="button"
               className="flex items-center px-2 py-1 pl-0 space-x-1"
             >
