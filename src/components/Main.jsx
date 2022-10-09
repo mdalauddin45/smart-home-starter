@@ -1,4 +1,4 @@
-import React, { CartContext, createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Outlet, useLoaderData } from "react-router-dom";
