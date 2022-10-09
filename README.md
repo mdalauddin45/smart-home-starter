@@ -26,4 +26,4 @@ Icon -> [FlatIcon](https://www.flaticon.com/)
 
 ## live link
 
-Icon -> [live Site](https://smart-home-store.netlify.app/)
+Live Site -> [live Site](https://smart-home-store.netlify.app/)
