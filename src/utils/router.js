@@ -15,6 +15,7 @@ const router = createBrowserRouter([
     loader: productsAddCartData,
     children: [
       { path: "/", element: <Home></Home> },
+      { path: "/home", element: <Home></Home> },
       { path: "/shop", element: <Shop></Shop> },
       { path: "/cart", element: <Cart></Cart> },
       { path: "/about", element: <About></About> },
