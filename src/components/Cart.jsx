@@ -25,7 +25,9 @@ const Cart = () => {
     if (cart.length) {
       setCart([]);
       deleteShoppingCart();
+      return toast.success("Order Placed!", { autoClose: 500 });
     }
+    return toast.error("Cart is empty", { autoClose: 500 });
   };
 
   return (
@@ -45,7 +47,7 @@ const Cart = () => {
         </ul>
         <div className="space-y-1 text-right">
           <p>
-            Total amount: <span className="font-semibold">00$</span>
+            Total amount: <span className="font-semibold">{total}$</span>
           </p>
           <p className="text-sm text-gray-400">
             Not including taxes and shipping costs
