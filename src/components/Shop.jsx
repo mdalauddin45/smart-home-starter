@@ -11,7 +11,7 @@ const Shop = () => {
   // console.log(products);
 
   const handleAddToCart = (product) => {
-    console.log(product);
+    // console.log(product);
     let newCart = [];
     const exists = cart.find((e) => e.id === product.id);
     if (!exists) {

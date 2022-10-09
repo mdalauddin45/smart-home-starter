@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./Main";
 import CartItem from "./CartItem";
-import { removeFromDb } from "../utils/fakeDB";
+import { deleteShoppingCart, removeFromDb } from "../utils/fakeDB";
 import { toast } from "react-toastify";
 
 const Cart = () => {
@@ -13,6 +13,19 @@ const Cart = () => {
     setCart(remining);
     removeFromDb(id);
     toast.warning("Product Removed!", { autoClose: 500 });
+  };
+
+  let total = 0;
+
+  for (const product of cart) {
+    total = total + product.price * product.quantity;
+  }
+
+  const handleOrder = () => {
+    if (cart.length) {
+      setCart([]);
+      deleteShoppingCart();
+    }
   };
 
   return (
@@ -48,6 +61,7 @@ const Cart = () => {
             </button>
           </Link>
           <button
+            onClick={handleOrder}
             type="button"
             className="px-6 py-2 border font-semibold rounded-full hover:bg-cyan-400 bg-cyan-200 text-gray-800"
           >
